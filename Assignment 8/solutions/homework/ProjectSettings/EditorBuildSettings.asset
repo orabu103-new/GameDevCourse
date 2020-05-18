@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/5-basketball/b-MiniBasketball.unity
-    guid: dab993c6c680344479d5404215ab9b17
+    path: Assets/Scenes/MainMenu.unity
+    guid: 1fd037680a7451a4c9716b518858bc23
+  - enabled: 1
+    path: Assets/Scenes/birds/a-AngryBirds.unity
+    guid: 0933a4666c9b17e45a53efa30e5f7fb0
   m_configObjects: {}

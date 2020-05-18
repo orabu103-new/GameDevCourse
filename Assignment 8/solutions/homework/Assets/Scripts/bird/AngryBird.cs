@@ -52,13 +52,7 @@ public class AngryBird: MonoBehaviour {
         yield return new WaitForSeconds(releaseTime); 
         GetComponent<SpringJoint2D>().enabled = false;
         this.enabled = false;
-        yield return new WaitForSeconds(2f);
-        if (nextBull != null)
-            nextBull.SetActive(true);
-        else if(rb.IsSleeping() == false)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-
+        rb.GetComponent<resetGame>().canScriptStart = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
