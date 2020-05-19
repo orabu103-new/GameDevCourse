@@ -1281,7 +1281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141326286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.14, y: 1.24, z: -1}
+  m_LocalPosition: {x: 1.14, y: 0.84, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1533,6 +1533,11 @@ PrefabInstance:
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 822757724}
+    - target: {fileID: 5497353527810007111, guid: 5c98a60d3023b574ba9af90e76390b8d,
+        type: 3}
+      propertyPath: m_Frequency
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c98a60d3023b574ba9af90e76390b8d, type: 3}
 --- !u!1001 &1328914510
@@ -2075,6 +2080,11 @@ PrefabInstance:
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 822757724}
+    - target: {fileID: 5497353527810007111, guid: 5c98a60d3023b574ba9af90e76390b8d,
+        type: 3}
+      propertyPath: m_Frequency
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c98a60d3023b574ba9af90e76390b8d, type: 3}
 --- !u!4 &1838074730 stripped
@@ -2561,6 +2571,11 @@ PrefabInstance:
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 822757724}
+    - target: {fileID: 5497353527810007111, guid: 5c98a60d3023b574ba9af90e76390b8d,
+        type: 3}
+      propertyPath: m_Frequency
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c98a60d3023b574ba9af90e76390b8d, type: 3}
 --- !u!1001 &8290712076274571924
