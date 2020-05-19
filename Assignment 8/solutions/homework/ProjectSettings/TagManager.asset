@@ -12,6 +12,7 @@ TagManager:
   - Moon
   - Bound
   - ground
+  - Background
   layers:
   - Default
   - TransparentFX

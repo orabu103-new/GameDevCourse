@@ -10,20 +10,20 @@ public class AngryBird: MonoBehaviour {
     [SerializeField] Rigidbody2D hook = null;
     [SerializeField] float releaseTime = .15f;
     [SerializeField] float maxDragDistance = 2f;
+    public int Life = 3;
 
     static public int HIGH_SCORE = 0;
     static public int SCORE_FROM_PREV_ROUND = 0;
     public GameObject nextBull;
 
     private bool isMousePressed = false;
-    private bool isScore = false;
-    private int score = 0;
+  
 
     private Rigidbody2D rb;
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
-        score = HIGH_SCORE = PlayerPrefs.GetInt("BasketballScore");
+ 
     }
 
     void Update() {
@@ -39,6 +39,7 @@ public class AngryBird: MonoBehaviour {
     private void OnMouseDown() {
         isMousePressed = true;
         rb.isKinematic = true;
+        this.GetComponent<resetGame>().setBall();
     }
 
     private void OnMouseUp() {
@@ -53,31 +54,17 @@ public class AngryBird: MonoBehaviour {
         GetComponent<SpringJoint2D>().enabled = false;
         this.enabled = false;
         rb.GetComponent<resetGame>().canScriptStart = true;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "boundery") {
-            if (!isScore)
-                SetScore(0);
+        
+        yield return new WaitForSeconds(2f);
+        if (nextBull != null)
+            nextBull.SetActive(true);
+        else
+        {
+            yield return new WaitForSeconds(3f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // restart game
-        } else if (other.tag == "Score") {
-            if (!isScore) {
-                isScore = true;
-                SetScore(score + 1);
-            }
+
+
         }
     }
-
-    private void SetScore(int newScore) {
-        score = newScore;
-        PlayerPrefs.SetInt("BasketballScore", score);
-        print("Score: " + score);
-    }
-
-    void OnGUI() {
-        GUIStyle fontSize = new GUIStyle(GUI.skin.GetStyle("label"));
-        fontSize.fontSize = 16;
-        fontSize.normal.textColor = Color.black;
-        GUI.Label(new Rect(70, 0, 150, 50), "Score: " + score, fontSize);
-    }
+    
 }

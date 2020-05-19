@@ -8,6 +8,7 @@ public class DestyoyD2 : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] float health = 4f;
     public static int EnemyAlive = 0;
+    
 
     void Start()
     {
@@ -24,8 +25,10 @@ public class DestyoyD2 : MonoBehaviour
             if (EnemyAlive <= 0)
             {
                 Debug.Log("Level Up");
+                Destroy(collision.gameObject);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }
+    
 }
