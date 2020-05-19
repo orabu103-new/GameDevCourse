@@ -54,6 +54,7 @@ public class AngryBird: MonoBehaviour {
         GetComponent<SpringJoint2D>().enabled = false;
         this.enabled = false;
         rb.GetComponent<resetGame>().canScriptStart = true;
+        FindObjectOfType<AudioManager>().play("Release_audio");
         
         yield return new WaitForSeconds(2f);
         if (nextBull != null)
