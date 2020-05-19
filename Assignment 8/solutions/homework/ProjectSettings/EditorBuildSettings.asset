@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/birds/Level2.unity
     guid: bcb72ee7687560048bc000a78f8e437e
   - enabled: 1
+    path: Assets/Scenes/birds/Level 3.unity
+    guid: 7bf54ff4f3f5d0b4d9ed70b5cf025013
+  - enabled: 1
     path: Assets/Scenes/birds/Level4.unity
     guid: a7255b56a336edc4ba49257923dada79
   m_configObjects: {}

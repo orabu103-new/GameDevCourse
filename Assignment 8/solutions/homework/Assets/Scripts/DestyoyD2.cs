@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class DestyoyD2 : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] float health = 4f;
+    [SerializeField] float health = 0.5f;
     public static int EnemyAlive = 0;
     
 
