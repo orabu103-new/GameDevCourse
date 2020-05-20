@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 /**
  * This component lets the player pull the ball and release it.
  */
-public class AngryBird: MonoBehaviour {
+public class AngryBird: MonoBehaviour
+{
     [SerializeField] Rigidbody2D hook = null;
     [SerializeField] float releaseTime = .15f;
     [SerializeField] float maxDragDistance = 2f;
@@ -15,6 +16,7 @@ public class AngryBird: MonoBehaviour {
     static public int HIGH_SCORE = 0;
     static public int SCORE_FROM_PREV_ROUND = 0;
     public GameObject nextBull;
+   
 
     private bool isMousePressed = false;
   
@@ -23,7 +25,7 @@ public class AngryBird: MonoBehaviour {
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
- 
+    
     }
 
     void Update() {
@@ -39,7 +41,7 @@ public class AngryBird: MonoBehaviour {
     private void OnMouseDown() {
         isMousePressed = true;
         rb.isKinematic = true;
-        this.GetComponent<resetGame>().setBall();
+ 
     }
 
     private void OnMouseUp() {
@@ -48,12 +50,12 @@ public class AngryBird: MonoBehaviour {
         StartCoroutine(ReleaseBall());
     }
 
+    
     IEnumerator ReleaseBall() {
         // Wait a short time, to let the physics engine operate the spring and give some initial speed to the ball.
         yield return new WaitForSeconds(releaseTime); 
         GetComponent<SpringJoint2D>().enabled = false;
         this.enabled = false;
-        rb.GetComponent<resetGame>().canScriptStart = true;
         FindObjectOfType<AudioManager>().play("Release_audio");
         
         yield return new WaitForSeconds(2f);
@@ -62,9 +64,11 @@ public class AngryBird: MonoBehaviour {
         else
         {
             yield return new WaitForSeconds(3f);
+           
+            DestyoyD2.EnemyAlive = 0;
+
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // restart game
-
-
         }
     }
     

@@ -13,22 +13,35 @@ public class DestyoyD2 : MonoBehaviour
     void Start()
     {
         EnemyAlive++;
+        Debug.Log("Enemy start: " + EnemyAlive);
     }
+  
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.relativeVelocity.magnitude);
-        if (collision.relativeVelocity.magnitude > health)
+        if (this.tag == "Enemy")
         {
-            Destroy(this.gameObject);
-            EnemyAlive--;
-            if (EnemyAlive <= 0)
+            Debug.Log("Enemy : " + EnemyAlive);
+            ; ; Debug.Log(collision.relativeVelocity.magnitude);
+            if (collision.relativeVelocity.magnitude > health)
             {
-                Debug.Log("Level Up");
-                Destroy(collision.gameObject);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                Destroy(this.gameObject);
+                EnemyAlive--;
+                if (EnemyAlive <= 0)
+                {
+                    Debug.Log("Level Up");
+                    Destroy(collision.gameObject);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
+
             }
         }
     }
-    
+    public void setEnemy()
+    {
+        EnemyAlive = 0;
+        Debug.Log("setEnemy: " + EnemyAlive);
+    }
+  
+
 }

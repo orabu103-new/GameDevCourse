@@ -13,6 +13,7 @@ TagManager:
   - Bound
   - ground
   - Background
+  - Enemy
   layers:
   - Default
   - TransparentFX
