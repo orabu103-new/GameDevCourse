@@ -10,10 +10,10 @@
 <p>
 <strong> 
 <img src="./Assets/Cute Birds/PNG Files/Blue Bird.png"  width="50px" height="50px" />Player - </strong>
- The player must kill the enemy in 3 shot <br>
+ The player must kill the enemy in 3 shot  <a href="./Assets/Scripts/bird/AngryBird.cs">The player code</a><br>
 <strong> 
 <img src="./Assets/Cute Birds/PNG Files/Chicken.png" width="50px" height="50px" /> Enemy - </strong> 
-The player must hit hard enough to kill the enemy <br>
+The player must hit hard enough to kill the enemy <a href="./Assets/Scripts/DestyoyD2.cs">The Eenemy code</a><br>
 
 
 <h4>Level 1 -</h4>
