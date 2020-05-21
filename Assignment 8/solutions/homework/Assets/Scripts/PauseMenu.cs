@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     public bool gameIsPause = true;
     public GameObject pause;
     public GameObject play;
-
+    //pause the game
     private void Start()
     {
         pause.SetActive(false);
