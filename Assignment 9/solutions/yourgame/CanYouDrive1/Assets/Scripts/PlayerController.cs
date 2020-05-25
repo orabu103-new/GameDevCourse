@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -15,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public float LaneDistance = 4; // distance between two lanes
     public float MoveToSidesSpeed = 4.5f;
 
+    public float gravity = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +28,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        direction.y = -1 * gravity;
         direction.z = speed;
-
         //get info on which lane we should be in.
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
