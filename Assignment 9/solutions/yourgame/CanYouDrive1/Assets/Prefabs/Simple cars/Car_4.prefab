@@ -406,7 +406,6 @@ GameObject:
   - component: {fileID: 4870167790249810}
   - component: {fileID: 4966533681961268038}
   - component: {fileID: 760443443}
-  - component: {fileID: 760443445}
   - component: {fileID: 760443444}
   m_Layer: 0
   m_Name: Car_4
@@ -445,8 +444,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.93793947, y: 0.68833447, z: 3.2296395}
-  m_Center: {x: -0.031030273, y: 0.2881976, z: 0.31475225}
+  m_Size: {x: 0.93793947, y: 0.64627534, z: 2.471977}
+  m_Center: {x: -0.031030273, y: 0.3092272, z: 0.023391861}
 --- !u!143 &760443443
 CharacterController:
   m_ObjectHideFlags: 0
@@ -465,19 +464,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!65 &760443445
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646981259178978}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.5812128, z: 3.1867425}
-  m_Center: {x: 0, y: 0.30375883, z: 0.35587585}
 --- !u!114 &760443444
 MonoBehaviour:
   m_ObjectHideFlags: 0
