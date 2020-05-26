@@ -5,33 +5,50 @@ using UnityEngine;
 public class RoadManager : MonoBehaviour
 {
     [SerializeField]
-    public GameObject[] roadPrefabs;
-    public float zspawn = 0;
-    public float roadLength = 30 ;
-    public int numOfRoads = 4; 
+    public GameObject roadPrefabs;
+    public float zspawn = 235;
+    public float roadLength = 150 ;
+    private List<GameObject> activtyRoad = new List<GameObject>();
 
-
+    public Transform player;
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < numOfRoads; i++)
-        {
-            SpawnRoad(Random.Range(0, roadPrefabs.Length)); 
-        }
+        Vector3 startRoad = new Vector3(0,0,90) ;
+        GameObject newObject = Instantiate(roadPrefabs, startRoad, transform.rotation);
+        activtyRoad.Add(newObject);
+
+      
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(player.transform.position.z >  roadLength)
+        {
+            roadLength = player.transform.position.z + zspawn;
+            SpawnRoad();
+            if (activtyRoad.Count > 2)
+            {
+                DeleteRoad();
+            }
+           
+        }
     }
 
-    public void SpawnRoad(int RoadIndex)
+    public void SpawnRoad()
     {
 
         Debug.Log("KABOM!!!!"); 
-        Instantiate(roadPrefabs[RoadIndex], transform.forward * zspawn, transform.rotation);
-        zspawn = roadLength;
+      GameObject newObject =  Instantiate(roadPrefabs, transform.forward * roadLength, transform.rotation);
+        activtyRoad.Add(newObject);
+        
     
+    }
+    private void DeleteRoad()
+    {
+        Destroy(activtyRoad[0]);
+        activtyRoad.RemoveAt(0);
     }
 }
